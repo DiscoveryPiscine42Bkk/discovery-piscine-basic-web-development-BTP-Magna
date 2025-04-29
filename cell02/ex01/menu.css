@@ -1,0 +1,53 @@
+.dropdown {
+    /* To force the content place right below */
+    /* Required child element to be absolute */
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: green;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+}
+
+.dropdown-content {
+    /* Initial set contet to be hidden */
+    display: none;
+    position: absolute;
+    background-color: pink;
+
+    /* Or set to be 100% will be width of div parent */
+    width: 100%;
+
+    /* overflow allow the menu to be scrollable */
+    /* overflow: auto */
+
+    /* Give each content element a box shadow */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    /* Arrange layer of the element */
+    z-index: 1;
+
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 15px 15px;
+    display: block;    
+    /* Give each content text a padding and border */
+    border: 2px solid rgba(120, 120, 120, 0.50);
+}
+
+/* when hover over element with class dropdown or content */
+.dropdown:hover .dropdown-content {
+    /* Make the element display as a block when hover */
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: white;
+    color: black;
+}
