@@ -1,0 +1,34 @@
+/* Modify browser default padding and margin */
+body {
+    padding: 0%;
+    margin: 0;
+}
+/* Make table responsive and always 100% of display width */
+table {
+    width: 100%;
+}
+/* Add padding top and bottom to the table cell */
+th, td {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+/* Add border line to the box */
+/* border collaspe to avoid possible double border */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#box1 {
+    background-color: green;
+    text-align: left;
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
+}
+#box2 {
+    background-color: pink;
+    text-align: left;
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%
+}
