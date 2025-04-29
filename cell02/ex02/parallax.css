@@ -1,0 +1,55 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bgimg_1 , .bgimg_2, .bgimg_3 {
+    /* Make it so the image doesn't affect flow of other element */
+    position: relative;
+    /* Make the img not scroll with the page */
+    background-attachment: fixed;
+    /* Set the start position of the image */
+    background-position: center;
+
+    /* Make the image not repeat when it didn't fill size properly */
+    background-repeat: no-repeat;
+
+    /* Make the background image fill/cover entire container will stretch */
+    background-size: cover;
+    /* If the container is small it will only be that big */
+}
+
+.img_caption {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    right: 40%;
+    text-align: center;
+    padding: 25px 30px;
+    font-size: 25px;
+    background-color: grey;
+    opacity: 0.75;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+.bgimg_1 {
+    background-image: url("https://i0.wp.com/imaginewithrashid.com/wp-content/uploads/2024/07/create-parallax-video-from-still-images.webp?w=1200&ssl=1");
+    min-height: 60%;
+}
+
+.bgimg_2 {
+    background-image: url("https://cdn.mos.cms.futurecdn.net/cM5V9AUNzBjS5oTYKECpuY-970-80.jpg.webp");
+    min-height: 40%;
+}
+.bgimg_3 {
+    background-image: url("https://random-image-pepebigotes.vercel.app/api/random-image");
+    min-height: 75%;
+}
+.text_container {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 75px 100px;
+    text-align: center;
+}
+
