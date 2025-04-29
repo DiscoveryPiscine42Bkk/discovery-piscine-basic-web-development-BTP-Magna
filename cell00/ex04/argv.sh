@@ -1,10 +1,12 @@
 #!/bin/bash
 
-if [[ $# -eq 0 ]]; then
+arg_count=$#
+
+if [ $arg_count -eq 0 ]; then
     echo "No arguments supplied"
-elif [[ $# -eq 1 ]]; then
+elif [ $arg_count -eq 1 ]; then
     echo $1
-elif [[ $# -eq 2 ]]; then
+elif [ $arg_count -eq 2 ]; then
     echo $1
     echo $2
 else
