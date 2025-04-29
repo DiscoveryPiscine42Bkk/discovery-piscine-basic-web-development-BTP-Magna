@@ -16,9 +16,10 @@
 .dropdown-content {
     /* Initial set contet to be hidden */
     display: none;
+    /* Use absolute  */
+    /* Take position from ancestor or one element before */
     position: absolute;
-    background-color: pink;
-
+    background-color: palegoldenrod;
     /* Or set to be 100% will be width of div parent */
     width: 100%;
 
@@ -34,7 +35,7 @@
 }
 
 .dropdown-content a {
-    color: white;
+    color: black;
     padding: 15px 15px;
     display: block;    
     /* Give each content text a padding and border */
