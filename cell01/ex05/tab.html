@@ -3,17 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        body {
+        }
+        table {
+            width: 100%;
+        }
+        th, td {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        #box1 {
+            background-color: green;
+            text-align: left;
+        }
+        #box2 {
+            background-color: pink;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>
-                First cell
-            </th>
-            <th>
-                Second cell
-            </th>
-        </tr>
-    </table>
+    <div style="display: flex; margin: auto;">
+        <table>
+            <tr>
+                <th id="box1">
+                    First cell
+                </th>
+                <th id="box2">
+                    Second cell
+                </th>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
+
+<!-- Each box of the table contains a text of your choice.
+     Each box on the chart contains a color of your choice. -->
