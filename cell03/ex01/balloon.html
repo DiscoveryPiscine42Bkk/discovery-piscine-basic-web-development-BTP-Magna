@@ -24,8 +24,10 @@
         ball.addEventListener('mouseout', mouseLeave);
 
         function click() {
-            let b_width = ball.offsetWidth; // get current ball element width as number value
-            let b_height = ball.offsetHeight; // get current ball element height as number value
+            let b_width = ball.clientWidth; // get current ball element width as number value
+            let b_height = ball.clientHeight; // get current ball element height as number value
+            // if it is offset size will return with everything
+            // if client will return size will padding but not scrollbar, border, and margin
             // if size too big reset
             if (b_width > 420 - 10) {
                 ball.style.height = "200px";
@@ -40,8 +42,8 @@
         }
 
         function mouseLeave () {
-            let b_width = ball.offsetWidth; // get current ball element width as number value
-            let b_height = ball.offsetHeight; // get current ball element height as number value
+            let b_width = ball.clientWidth; // get current ball element width as number value
+            let b_height = ball.clientHeight; // get current ball element height as number value
             // only decrease if size is not lower than 200
             if (b_width > 200 + 5) {
                 ball.style.height = b_height - 5 + "px";
