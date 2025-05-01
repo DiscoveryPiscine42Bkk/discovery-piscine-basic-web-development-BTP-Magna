@@ -12,23 +12,7 @@ function newToDo() {
 		}
 	} while (inputValue == "");
 
-	// Create new li element and store it in li var
-	let li = document.createElement("li");
-	// Create text node with inputValue content
-	let textNode = document.createTextNode(inputValue);
-	// Add text input value into li element
-	li.appendChild(textNode);
-	// alert(li.textContent); // check input
-
-	// add event listner removeToDo(this) 
-	li.addEventListener("click", function () {
-		removeToDo(this); // this refer to it own element
-	});
-
-	// Get element of where we want to put new li
-	let ul = document.getElementById("list_table");
-	// insert before ul first child element 
-	ul.insertBefore(li, ul.firstChild);
+	insertToDo(inputValue);
 
 	// Save to do list to the cookie
 	saveToDo();
@@ -36,38 +20,24 @@ function newToDo() {
 
 
 function insertToDo(value) {
-	// Create new li element and store it in li var
-	let li = document.createElement("li");
-	// Create text node with inputValue content
-	let textNode = document.createTextNode(value);
-	// Add text input value into li element
-	li.appendChild(textNode);
-
-	// add event listner removeToDo(this) 
-	li.addEventListener("click", function () {
-		removeToDo(this); // this refer to it own element
+	/// Create new li element and store value
+	let list = $("<li></li>").text(value);
+	// Add event listener
+	list.click(function () {
+		let confirmation = confirm("Do you want to delete this to do?");
+		if (confirmation) {
+			this.remove();
+			saveToDo();
+		}
 	});
-	// Get element of where we want to put new li
-	let ul = document.getElementById("list_table");
-	// insert before ul first child element 
-	ul.insertBefore(li, ul.firstChild);
-}
-
-
-function removeToDo(el) {
-	let confirmation = confirm("Do you want to delete this to do?");
-	// alert(confirmation); confirm return true or false
-	if (confirmation) {
-		let to_do_element = el;
-		to_do_element.remove();
-		saveToDo();
-	}
+	// Prepend the new element inside list_table
+	$('#list_table').prepend(list);
 }
 
 
 // Save current to do list to cookie and call this when ever it change
 function saveToDo() {
-	const list = document.getElementById("list_table");
+	const list = $('list_table');
 	// Get all li element in the list table as an array
 	const items = Array.from(list.children);
 	// Get create new array with map and extract all text content and put it in new array
@@ -88,8 +58,6 @@ function setCookie(name, value, days) {
     document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
 }
 
-
-
 function loadTodo() {
 	// Get back the save text value array
 	const jsonString = getCookie('toDoList');
@@ -103,7 +71,6 @@ function loadTodo() {
 		insertToDo(items[i]);
 	}	
 }
-
 
 // Load and get the cookie string array
 function getCookie(cname) {
