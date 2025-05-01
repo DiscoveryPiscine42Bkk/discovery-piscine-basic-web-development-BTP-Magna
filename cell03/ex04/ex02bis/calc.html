@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>It's over 9000</title>
     <style>
         * {
@@ -36,56 +37,64 @@
             <!-- create text input field for right side -->
             <input type="text" name="number_r" id="number_r">
             <!-- a submit button to try it will then calculate the result with alert() and console.log() message -->
-            <button onclick="cal()">Try me!</button>
+            <button onclick="cal()" id="calculate">Try me!</button>
         </div>
     <script>
         // Required to put the alert in short hand function defination so that it don't get call immedietly
         function timer() {
             setInterval( () => {alert('Please, use me...')}, 30000);
         }
-        function cal () {
-            const number_left = parseFloat(document.getElementById('number_l').value);
-            const number_right = parseFloat(document.getElementById('number_r').value);
-            const operatorElement = document.getElementById('operator');
-			const operator = operatorElement.options[operatorElement.selectedIndex].value;
-            // Check if both only have positive int and int not decimal
-            if (!Number.isInteger(number_left) || !Number.isInteger(number_right) ||
-                number_left < 0 || number_right < 0) {
-                alert('Error :(');
-                console.log('Error :(');
-                return;
-            }
-            // operator is / or %  and right number is 0 print it over 9000!
-            if ((operator === '/' || operator === '%' ) && number_right == 0) {
-                alert('It’s over 9000!');
-                console.log('It’s over 9000!');
-                return;
-            }
-            // switch case if operator match case it will alert with the result
-            let result;
-            switch (operator) {
-                case '+':
-                    result = number_left + number_right;
-                    break;
-                case '-':
-                    result = number_left - number_right;
-                    break;
-                case '*':
-                    result = number_left * number_right;
-                    break;
-                case '/':
-                    result = number_left / number_right;
-                    break;
-                case '*':
-                    result = number_left * number_right;
-                    break;
-                case '%':
-                    result = number_left % number_right;
-                    break;
-            }
-            alert(result);
-            console.log(result);
-        }
+
+        // Jquery Start
+        $(document).ready(function() {
+            const calculate = $('#calculate');
+
+            calculate.on('click', function() {
+                const numb_l = parseFloat($('#number_l').val()); // Have to use jquery val() not value
+                const numb_r = parseFloat($('#number_r').val());
+                const operator = $('#operator').find(":selected").text(); // Get current operation 
+                
+                // Check if both only have positive int and int not decimal
+                if (!Number.isInteger(numb_l) || !Number.isInteger(numb_r) ||
+                numb_l < 0 || numb_r < 0) {
+                    alert('Error :(');
+                    console.log('Error :(');
+                    return;
+                }
+
+                // operator is / or %  and right number is 0 print it over 9000!
+                if ((operator === '/' || operator === '%' ) && numb_r == 0) {
+                    alert('It’s over 9000!');
+                    console.log('It’s over 9000!');
+                    return;
+                }
+
+                // switch case if operator match case it will alert with the result
+                let result;
+                switch (operator) {
+                    case '+':
+                        result = numb_l + numb_r;
+                        break;
+                    case '-':
+                        result = numb_l - numb_r;
+                        break;
+                    case '*':
+                        result = numb_l * numb_r;
+                        break;
+                    case '/':
+                        result = numb_l / numb_r;
+                        break;
+                    case '*':
+                        result = numb_l * numb_r;
+                        break;
+                    case '%':
+                        result = numb_l % numb_r;
+                        break;
+                }
+                alert(result);
+                console.log(result);
+            });
+        })
     </script>
 </body>
 </html>
