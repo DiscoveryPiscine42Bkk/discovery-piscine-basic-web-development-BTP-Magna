@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explode this balloon</title>
+    <style>
+            #balloon {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id = "balloon"></div>
+    <script>
+        // Make array of color to loop over
+        const colors = ["red", "green", "blue"];
+        let index = 0; // this track when html load and stay as global variable in dom? 
+
+        const ball = document.getElementById('balloon');
+        ball.addEventListener('click', click);
+        ball.addEventListener('mouseout', mouseLeave);
+
+        function click() {
+            let b_width = ball.clientWidth; // get current ball element width as number value
+            let b_height = ball.clientHeight; // get current ball element height as number value
+            // if it is offset size will return with everything
+            // if client will return size will padding but not scrollbar, border, and margin
+            // if size too big reset
+            if (b_width > 420 - 10) {
+                ball.style.height = "200px";
+                ball.style.width = "200px";
+            } 
+            // esle increase size
+            else {
+                ball.style.height = b_height + 10 + "px";
+                ball.style.width = b_width + 10 + "px";
+            }
+            next_color();
+        }
+
+        function mouseLeave () {
+            let b_width = ball.clientWidth; // get current ball element width as number value
+            let b_height = ball.clientHeight; // get current ball element height as number value
+            // only decrease if size is not lower than 200
+            if (b_width > 200 + 5) {
+                ball.style.height = b_height - 5 + "px";
+                ball.style.width = b_width - 5 + "px";
+            }
+            pre_color()
+        }
+    
+        function next_color() {
+            index++;
+            if (index > 2) {
+                index = 0;
+            }
+            document.getElementById('balloon').style.backgroundColor = colors[index];
+        }
+
+        function pre_color() {
+            index--;
+            if (index < 0) {
+                index = 2;
+            }
+            document.getElementById('balloon').style.backgroundColor = colors[index];
+        }
+    </script>
+</body>
+</html>

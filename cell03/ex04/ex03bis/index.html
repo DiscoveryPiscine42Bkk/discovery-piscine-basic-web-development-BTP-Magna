@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To Do List</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		#container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+		}
+
+		.title {
+			margin-bottom: 10px;
+		}
+
+		.list_table {
+			margin-bottom: 10x;
+		}
+
+		button {
+			width: 100%;
+			max-width: 200px;
+			padding: 10px 20px;
+		}
+
+		li {
+			width: 100%;
+			max-width: 200px;
+			padding: 10px 20px;
+			border: 2px solid black;
+			list-style-type: none;
+		}
+	</style>
+	<script src="todo.js"></script>
+</head>
+
+<body onload="loadTodo()">
+	<div id="container">
+		<h1 class="title">To do list</h1>
+		<div id="ft_list">
+			<ul id="list_table">
+				<!-- Each TODO will be insert here-->
+			</ul>
+			<!-- When clicked, it will popup an input text window -->
+			<button onclick="newToDo()">NEW</button>
+		</div>
+	</div>
+</body>
+
+</html>
+
+<!-- To do list div container that have list of TO DO inside -->
+<!-- When To do is create it will insert at the top -->
+
+<!-- New button that when click will open text window -->
+<!-- Take user validate then populate on top -->
+
+<!-- To remove the TO DO just click on the TODO element -->
+<!-- A window must pop up to confirm-->
