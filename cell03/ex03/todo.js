@@ -110,15 +110,19 @@ function getCookie(cname) {
 	let name = cname + "=";
 	let decodedCookie = decodeURIComponent(document.cookie);
 	let carray = decodedCookie.split(';');
+	// console.log(carray) Array ["obj174", " toDoList", " obj255"];
 	// loop through each cookie to see if it exist
 	for(let i = 0; i <carray.length; i++) {
-	  let c = carray[i];
-	  while (c.charAt(0) == ' ') {
-		c = c.substring(1);
-	  }
-	  if (c.indexOf(name) == 0) {
-		// 
-		return c.substring(name.length, c.length);
+	  	let c = carray[i];
+		// if current array have white space move onward 1 letter
+	  	while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+	  	}
+		// if current array match with input argument
+	  	if (c.indexOf(name) == 0) {
+			console.log(c.substring(name.length, c.length));
+			// Get the array but not the cookie name itself
+			return c.substring(name.length, c.length);
 	  }
 	}
 	return "";
