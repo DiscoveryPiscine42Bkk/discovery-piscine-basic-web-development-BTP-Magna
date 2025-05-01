@@ -12,23 +12,7 @@ function newToDo() {
 		}
 	} while (inputValue == "");
 
-	// Create new li element and store it in li var
-	let li = document.createElement("li");
-	// Create text node with inputValue content
-	let textNode = document.createTextNode(inputValue);
-	// Add text input value into li element
-	li.appendChild(textNode);
-	// alert(li.textContent); // check input
-
-	// add event listner removeToDo(this) 
-	li.addEventListener("click", function () {
-		removeToDo(this); // this refer to it own element
-	});
-
-	// Get element of where we want to put new li
-	let ul = document.getElementById("list_table");
-	// insert before ul first child element 
-	ul.insertBefore(li, ul.firstChild);
+	insertToDo(inputValue);
 
 	// Save to do list to the cookie
 	saveToDo();
