@@ -1,0 +1,89 @@
+html,body {
+    margin: 0;
+    padding: 0;
+}
+body {
+
+}
+
+.navbar{
+    display: flex;
+    position:fixed;
+    z-index:30;
+    width: 25%;
+    top:50px; left:50px;
+}   
+.btn {
+    display: relative;
+    height: 10%;
+    background-color: #111;
+    color: #f9f9f9;
+    font-family: 'Roboto', 'sans-serif'; font-size: 24px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #333;
+}
+
+.parallax-section {
+    /* Make the background pallarax */
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Make the background image cover the whole screen no matter if you zoom out */
+    background-size: cover; 
+    height: 100vh; width: 100vw;
+    display: flex; justify-content: center; align-items: center; justify-items: center;
+}
+
+.section-header {
+    height: 40vh; width: 100%; 
+    background-color: rgba(0, 0, 0, 0.1); 
+    display: flex; justify-content: center; align-items: center;
+    font-family: "Cedarville Cursive", 'cursive';  color:#fff; font-size:14em;
+    user-select: none;
+}
+
+.section-profile {
+    height: 120vh; width: 100%;
+    background-color: #cff8fe;
+    display: flex; flex-direction: row; align-items: center; justify-content: center;
+    font-family: "Roboto", sans-serif;  color:#ffffff; font-size:18em;
+    user-select: none;
+}
+
+.profile-img-container {
+    height: 50vh; width: 50vh;
+    background-color: #111;
+}
+
+.profile-img {
+    height: 100%; width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #111;
+    background-image: url('./img/profileImg.jpg');
+    background-size: cover;
+}
+
+.profile-textbox {
+    height: 50vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-color: #111;
+}
+
+.section-one-background {
+    background-image: url('./img/background_0.jpg');
+}
+
+.section-two-background {
+    background-image: url('./img/background_1.jpg');
+}
+
