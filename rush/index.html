@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMahagun Study</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+
+<body>
+    <section class="navbar">
+        <div class="btn" onclick="location.href='#Home'">H</div>
+        <div class="btn" onclick="location.href='#About'">A</div>
+        <div class="btn" onclick="location.href='#Work'">W</div>
+        <div class="btn" onclick="location.href='#Contact'">C</div>
+    </section>
+
+    <!-- Section one Intro Page Finish-->
+    <section id="Home" class="parallax-section section-one-background">
+        <div class="section-header">
+            <p>Hi! 42-Pisciners</p>
+        </div>
+    </section>
+
+    <!-- Section one Intro Profile Page -->
+    <section id="About" class="section-one-profile">
+        <div class="profile-container">
+            <div class="profile-image-container">
+                <img src="./img/profileImg.jpg" alt="" />
+            </div>
+            <div class="profile-text-container">
+                <h1>I'm TMAHAGUN</h1>
+                <p>a Web Design Pisciner at 42-Bangkok | Learning HTML, CSS, JavaScript</p>
+                <p></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section two Intro Page Finish-->
+    <section id="Work" class="parallax-section section-two-background">
+        <div class="work-header">
+            <h1>My work at 42</h1>
+        </div>
+    </section>
+
+    <!-- Section two Working Expirience Page Need further modification -->
+    <section class="section-two-work">
+        
+        <div class="work-container">
+            <img src="./img/work_0.png" alt="cell00 ex03-05">
+            <img src="./img/work_1.png" alt="cell01 ex04">
+            <img src="./img/work_2.gif" alt="cell02 ex02">
+            <img src="./img/work_3.gif" alt="cell01 ex00">
+        </div>
+    </section>
+
+    <!-- Section three Contact page Finish-->
+    <section id="Contact" class="parallax-section section-three-background">
+        <div class="contact-card">
+            <img id="profile_img" src="https://thispersondoesnotexist.com/" alt="This person doesn't exist">
+            <table>
+                <div style="background-color: rgba(0,0,0, 0.4); width: 100%;">
+                    <h1 id="phone"  style="color: white; text-align: center;">Contact Me!</h1>
+                </div>
+                <tr>
+                    <div class="social-media-container">
+                        <img src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Facebook_svg-1024.png" alt="1">
+                        <img src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Instagram_svg-1024.png" alt="2">
+                        <img src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Twitter_svg-1024.png" alt="3">
+                        <img src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Youtube_svg-1024.png" alt="4">
+                        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/Skype-1024.png" alt="5">
+                        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/Pinterest-1024.png" alt="6">
+                        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/WeChat-1024.png" alt="7">
+                        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/Reddit-1024.png" alt="8">
+                        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/Facebook_Messenger-1024.png" alt="9">
+                    </div>
+                </tr>
+            </table>
+            <button onclick="location.href='https\://youtu.be/hvL1339luv0?autoplay=1'" type="button">📞</button>
+        </div>
+        
+    </section>
+    
+    <script>
+        let phone_number = "";
+            
+        $('.social-media-container img').on('click', function() {
+            phone_number += $(this).attr('alt')
+            $('#phone').text(phone_number);
+        });
+
+    </script>
+</body>
+
+</html>

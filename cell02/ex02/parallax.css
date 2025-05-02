@@ -34,16 +34,16 @@ body, html {
 
 .bgimg_1 {
     background-image: url("https://i0.wp.com/imaginewithrashid.com/wp-content/uploads/2024/07/create-parallax-video-from-still-images.webp?w=1200&ssl=1");
-    min-height: 60%;
+    min-height: 100%;
 }
 
 .bgimg_2 {
     background-image: url("https://cdn.mos.cms.futurecdn.net/cM5V9AUNzBjS5oTYKECpuY-970-80.jpg.webp");
-    min-height: 40%;
+    min-height: 100%;
 }
 .bgimg_3 {
     background-image: url("https://random-image-pepebigotes.vercel.app/api/random-image");
-    min-height: 75%;
+    min-height: 100%;
 }
 .text_container {
     background-color: rgba(0, 0, 0, 0.8);
