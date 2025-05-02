@@ -37,9 +37,9 @@ function insertToDo(value) {
 
 // Save current to do list to cookie and call this when ever it change
 function saveToDo() {
-	const list = $('list_table');
+	const list = $('#list_table');
 	// Get all li element in the list table as an array
-	const items = Array.from(list.children);
+	const items = Array.from(list.find('li'));
 	// Get create new array with map and extract all text content and put it in new array
 	const itemsText = items.map(li => li.textContent); // apply input condition to each li element return it text content
 	// convert the new li text content into JSON string to save to cookie
